@@ -1,0 +1,59 @@
+apply plugin: 'com.android.application'
+apply plugin: 'com.neenbedankt.android-apt'
+apply plugin: 'realm-android'
+
+android {
+    compileSdkVersion 24
+    buildToolsVersion "24.0.1"
+    defaultConfig {
+        applicationId "com.wu.allen.myone"
+        minSdkVersion 19
+        targetSdkVersion 24
+        versionCode 1
+        versionName "1.0"
+        testInstrumentationRunner "android.support.test.runner.AndroidJUnitRunner"
+        ndk {
+            // 设置支持的SO库架构
+            abiFilters 'armeabi' , 'x86', 'armeabi-v7a', 'x86_64', 'arm64-v8a'
+            abiFilters 'x86' , 'x86', 'armeabi-v7a', 'x86_64', 'arm64-v8a'
+        }
+    }
+    buildTypes {
+        release {
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
+        }
+    }
+}
+
+dependencies {
+    compile fileTree(dir: 'libs', include: ['*.jar'])
+    androidTestCompile('com.android.support.test.espresso:espresso-core:2.2.2', {
+        exclude group: 'com.android.support', module: 'support-annotations'
+    })
+    compile 'com.android.support:appcompat-v7:24.2.0'
+    compile 'com.android.support:support-v13:24.2.0'
+    //compile 'com.android.support.constraint:constraint-layout:1.0.0-alpha'
+    compile 'com.android.support:design:24.2.0'
+    testCompile 'junit:junit:4.12'
+    compile 'com.android.support:cardview-v7:24.2.0'
+    // Google
+    compile 'com.google.dagger:dagger:2.0'
+    apt 'com.google.dagger:dagger-compiler:2.0'
+    provided 'org.glassfish:javax.annotation:10.0-b28'
+    compile 'com.commit451:PhotoView:1.2.4'
+    // other
+    compile 'com.jude:easyrecyclerview:4.0.4'
+    compile 'com.github.bumptech.glide:glide:3.6.1'
+    compile 'de.hdodenhof:circleimageview:2.1.0'
+    compile 'com.nispok:snackbar:2.11.+'
+    compile 'com.jude:swipebackhelper:3.1.2' //swipebackhelper帮助类,滑动关闭页面
+    compile 'com.squareup.picasso:picasso:2.5.2'
+    compile 'com.afollestad.material-dialogs:commons:0.9.0.0'
+    // LeanCloud 基础包
+    compile ('cn.leancloud.android:avoscloud-sdk:v3.+')
+    // for bugly
+    compile 'com.tencent.bugly:crashreport:latest.release'
+    compile 'com.tencent.bugly:nativecrashreport:latest.release'
+    compile 'top.zibin:BottomDialog:1.0.4'
+}

@@ -1,0 +1,71 @@
+<resources>
+
+    <!-- Base application theme. -->
+    <style name="AppTheme" parent="Theme.AppCompat.Light.DarkActionBar">
+        <!-- Customize your theme here. -->
+        <item name="colorPrimary">@color/blueStatus</item>
+        <item name="colorPrimaryDark">@color/blueStatus</item>
+        <item name="colorAccent">@color/colorAccent</item>
+    </style>
+
+    <style name="AppTheme.NoActionBar">
+        <item name="windowActionBar">false</item>
+        <item name="windowNoTitle">true</item>
+        <item name="android:windowIsTranslucent">true</item>
+        <item name="android:windowAnimationStyle">@style/SlideRightAnimation</item>
+    </style>
+
+    <style name="AppTheme.AppBarOverlay" parent="ThemeOverlay.AppCompat.Dark.ActionBar"/>
+
+    <style name="AppTheme.PopupOverlay" parent="ThemeOverlay.AppCompat.Light"/>
+
+    <!--This theme for slide means that you can slide activity/fragment like wechat-->
+    <style name="SlideTheme" parent="AppTheme.NoActionBar">
+        <item name="android:windowIsTranslucent">true</item>
+    </style>
+
+    <!--This theme for truslate statusbar-->
+    <style name="ImageTranslucentTheme" parent="AppTheme.NoActionBar">
+        <item name="android:windowTranslucentStatus">true</item>
+        <item name="android:windowTranslucentNavigation">true</item>
+    </style>
+
+    <!--This theme for title size of collsp-->
+    <style name="CollapsedAppBar" parent="@android:style/TextAppearance.Medium">
+        <item name="android:textSize">16sp</item>
+        <item name="android:textColor">@color/white</item>
+        <item name="android:textStyle">normal</item>
+    </style>
+
+    <!--This theme for toolbar just like zhihu-->
+    <style name="Theme.ZhiHu" parent="AppTheme.NoActionBar">
+        <item name="actionMenuTextColor">@android:color/white</item>
+        <item name="android:src">@drawable/ic_menu_overflow</item>
+    </style>
+
+    <!--TextView-->
+    <style name="NormalTextView">
+        <item name="android:textColor">@color/dark</item>
+        <item name="android:textSize">@dimen/textSize_normal</item>
+    </style>
+
+    <style name="NormalGreyTextView">
+        <item name="android:textColor">@color/grey</item>
+        <item name="android:textSize">@dimen/textSize_normal</item>
+    </style>
+
+    <style name="SmallTextView">
+        <item name="android:textColor">@color/dark</item>
+        <item name="android:textSize">@dimen/textSize_small</item>
+    </style>
+
+    <style name="SmallGreyTextView">
+        <item name="android:textColor">@color/grey</item>
+        <item name="android:textSize">@dimen/textSize_small</item>
+    </style>
+
+    <style name="DialogAnimation">
+        <item name="android:windowEnterAnimation">@anim/dialog_anim_in</item>
+        <item name="android:windowExitAnimation">@anim/dialog_anim_out</item>
+    </style>
+</resources>
